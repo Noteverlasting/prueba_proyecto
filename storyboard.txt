@@ -1,0 +1,253 @@
+El Núcleo Perdido
+
+Sinopsis:
+Un joven desarrollador, mientras trabaja en un proyecto, es absorbido por un sistema informático experimental 
+que fusiona inteligencia artificial y realidad aumentada. 
+Para salir, deberá encontrar el "Núcleo de Control", escondido entre módulos corruptos de código,
+donde los lenguajes web han tomado forma física. 
+En este mundo, las etiquetas HTML son aldeanos, las hojas de estilo CSS controlan el clima, 
+los scripts JS son criaturas vivas que alteran el entorno, 
+y PHP/SQL se representan como sabios guardianes del conocimiento y la memoria.
+
+ESCENOGRAFÍA Y NIVELES PROPUESTOS
+Podrías dividir la aventura en pantallas o zonas, cada una centrada en un lenguaje web.
+Aquí algunas ideas:
+
+1. 
+Entrada	"La Frontera del HTML"	Paisaje digital minimalista. 
+Formas cuadradas, etiquetas flotando.	
+Reconocer estructuras HTML, colocar etiquetas correctamente.
+
+2.
+CSS	"El Bosque del Estilo"	
+Un bosque cambiante donde el color, forma, y clima dependen del estilo.	
+Resolver puzzles para aplicar estilos a estructuras rotas.
+
+3.
+JavaScript	"Las Cavernas Dinámicas"	
+Ambientes oscuros donde los objetos se mueven y reaccionan.	
+Lógica condicional y eventos. Manipulación del DOM.
+
+4.
+SQL	"El Laberinto de Datos"	
+Un laberinto con paredes hechas de tablas.	
+Consultas SELECT para encontrar caminos, JOINs para desbloquear zonas.
+
+5.
+PHP	"La Fortaleza del Servidor"	
+Un castillo con puertas que se abren con scripts.	
+Enviar datos a un servidor, lógica del lado servidor.
+
+
+ELEMENTOS INTERACTIVOS
+
+NPCs: Algunos ayudan (como asistentes tipo Clippy, entidades sabias), 
+otros confunden o mienten (bugs o errores lógicos).
+
+Objetos: Fragmentos de código, "archivos perdidos", y "funciones rotas" para reparar.
+
+Interacción: Minijuegos donde el jugador edita un fragmento de código para avanzar.
+
+Sistema de pistas: Opcional, para que el jugador aprenda si no sabe la respuesta.
+
+
+
+CONSEJOS PARA EMPEZAR
+
+Define el mínimo viable: No intentes hacer 10 pantallas perfectas. 
+Haz 2 o 3 bien cerradas, completas, funcionales.
+
+Diseña en papel o en Figma: Haz wireframes de cómo será cada escena. 
+¿Dónde está el personaje, qué botones hay, qué se puede hacer?
+
+Reutiliza recursos: Usa sprites libres (por ejemplo en itch.io), tilesets básicos, etc.
+
+Planifica la navegación: ¿Cómo avanza el jugador? ¿Puede volver atrás?
+
+Sistema de guardado: Considera usar PHP y MySQL para guardar el progreso, aunque sea simple.
+
+
+PROPUESTA INICIAL STORYBOARD 
+(hay que desarrollar bien los conceptos y añadir pantallas posiblemente)
+
+
+INTRODUCCIÓN / PANTALLA 1: EL ACCESO
+
+Fondo: Oficina oscura. El protagonista está frente a su PC.
+
+Narrador: "Mientras probaba una nueva herramienta de desarrollo web, algo inesperado sucedió..."
+
+Pantalla parpadea, efectos glitch.
+
+Diálogo interno del personaje:
+— “¿Qué demonios...? ¡Me está arrastrando!”
+
+> Objetivo:
+Interacción básica para abrir el portal digital y ser transportado al sistema.
+
+Prueba 1: Clic en el icono correcto del escritorio (entre carpetas falsas). 
+Solo el archivo portal.html abre la puerta.
+
+Prueba 1: Acceder al portal. Completa un formulario HTML con nombre, correo y contraseña. 
+Al hacer clic en "Acceder", se genera un mensaje de bienvenida.
+
+Prueba Alternativa: Si el jugador usa un formato de correo incorrecto (ej. sin "@"), 
+la animación de "error" aparece y debe corregirlo para continuar. Si lo hace rápido y sin errores, 
+desbloquea una "entrada secreta" a una pantalla alternativa con un mini juego 
+que enseñará un concepto básico de validación de formularios.
+
+Atajo / Pantalla alternativa: Si el jugador selecciona un ítem incorrecto en el escritorio (como una carpeta equivocada),
+es transportado a un nivel secreto de trucos de CSS (nivel intermedio) donde debe usar una regla CSS 
+para ocultar un elemento y luego volver al nivel principal.
+
+
+
+PANTALLA 2: LA FRONTERA DEL HTML
+
+Fondo: Un mundo flotante hecho de etiquetas incompletas. Textos desordenados.
+
+NPC: Etiqueta, una entidad flotante hecha de signos < >.
+
+Diálogo:
+— Etiqueta: "¡Bienvenido! Aquí, todo tiene sentido solo si está correctamente estructurado. Ayúdame a reparar el orden del contenido."
+
+> Objetivo: 
+Ayudar a reconstruir un fragmento HTML que se ha corrompido.
+
+Aprendizaje: Comprensión de estructura semántica HTML.
+
+Prueba 1: arrastrar y soltar etiquetas <head>, <body>, <ul>, etc., en el orden correcto.
+
+Prueba 2: Reconstruir una página con varias etiquetas adicionales,
+como <section>, <footer>, y tener que asegurarse de que las etiquetas estén correctamente cerradas.
+
+Atajo / Pantalla alternativa: Si el jugador hace clic en un "bug" (un pequeño ícono de insecto que aparece en la esquina), 
+se transporta a una pantalla de debugging, donde tiene que encontrar y corregir errores de sintaxis HTML 
+(como etiquetas mal cerradas, estructuras duplicadas o elementos mal anidados).
+
+
+
+PANTALLA 3: EL BOSQUE DEL ESTILO (CSS)
+Fondo: Un bosque monocromo. Árboles sin color, terreno sin forma.
+
+NPC: Cascade, un estilista digital.
+
+Diálogo:
+— "Este bosque ha perdido su esencia. Necesita estilo, estructura... ¡vive a través del CSS!"
+
+> Objetivo:
+Aplicar selectores y propiedades CSS básicas para devolver la vida al entorno.
+
+Prueba 1: Modificar colores y tamaños de árboles, suelo y cielo usando clases y selectores (.árbol { color: green; }).
+
+Prueba 2: Usar combinadores (#suelo, div .hoja) y propiedades visuales como border, background-color, font-family.
+
+Atajo / Pantalla alternativa: Si el jugador encuentra un “mapa de estilo” escondido en el bosque, 
+desbloquea un reto adicional para usar Flexbox o Grid y reorganizar elementos visuales (nivel medio).
+
+
+
+PANTALLA 4: LAS CAVERNAS DINÁMICAS (JavaScript)
+Fondo: Cuevas con plataformas móviles y mecanismos reactivos. Palancas brillan en la oscuridad.
+
+NPC: Scriptus, un mago que anima el entorno con código.
+
+Diálogo:
+— "Nada se mueve por sí solo aquí. Todo responde a eventos... si sabes cómo invocarlos."
+
+> Objetivo:
+Introducción a la interacción con JavaScript: eventos, DOM y funciones básicas.
+
+Prueba 1: Activar una plataforma usando un botón con onclick que muestra/oculta elementos (document.getElementById(...).style.display = "block").
+
+Prueba 2: Usar addEventListener para hacer que una puerta se abra tras una secuencia de clics.
+
+Atajo / Pantalla alternativa: Encontrando una runa de tiempo, se desbloquea 
+una sala con un puzzle de animación controlada por setInterval() y clearInterval().
+
+
+
+PANTALLA 5: EL LABERINTO DE DATOS (SQL)
+
+Fondo: Un laberinto de columnas con símbolos grabados. Las paredes cambian con las consultas correctas.
+
+NPC: Query, un anciano sabio que domina las bases de datos y las consultas del mundo.
+
+Diálogo:
+— "Aquí yacen los datos... pero encontrar lo correcto requiere precisión."
+
+> Objetivo:
+Usar SQL para consultar información relevante y encontrar la salida.
+
+Prueba 1: Escribir una consulta SELECT para encontrar usuarios con cierta propiedad.
+
+Prueba 2: Unir dos tablas (JOIN) para descubrir una combinación correcta o 'llave' (por ejemplo, qué objeto pertenece a qué personaje).
+
+Prueba 3: Aplicar condiciones con WHERE y operadores lógicos para reducir resultados.
+
+Atajo / Pantalla alternativa: Resolver una consulta compleja con ORDER BY o GROUP BY en una cámara oculta con una tabla de estadísticas del mundo.
+
+
+
+PANTALLA 6: LA FORTALEZA DEL SERVIDOR (PHP)
+
+Fondo: Castillo flotante. Puertas con códigos y scripts girando alrededor.
+
+NPC: "PHPius", un monje-servidor que habla en variables.
+
+Diálogo:
+— PHPius: "Aquí no basta con enviar... debes interpretar, condicionar, iterar. Solo quien domina el flujo del servidor cruzará este umbral."
+
+> Objetivo: Resolver desafíos que implican estructuras de control, arrays y lógica condicional en PHP. 
+El HTML es solo un medio: el verdadero reto está en el procesamiento.
+
+Prueba 1: El Eco de la Verdad
+El jugador encuentra cuatro puertas etiquetadas con nombres. 
+Debe completar un fragmento PHP que evalúe un array asociativo 
+y determine cuál puerta es la verdadera usando if y comparaciones.
+
+Prueba 2: El Bucle del Guardián
+Un mensaje se repite una y otra vez. 
+El jugador debe usar un foreach sobre un array de objetos mágicos 
+y devolver solo los que cumplan un criterio (por ejemplo, que contengan una letra determinada).
+
+Prueba 3: Variables de la Verdad
+Tres compuertas dependen de variables booleanas. 
+El jugador debe ajustar condiciones lógicas (&&, ||, !) para abrir o cerrar combinaciones específicas según el enigma que plantea PHPius.
+
+-- Atajo / Pantalla alternativa: El Generador de Runas
+Acceso oculto: Al encontrar un símbolo secreto en una inscripción del muro.
+Desafío: Crear una función PHP con parámetros (nombre, color, objeto) que devuelva un mensaje personalizado.
+Aprendizaje: Funciones propias, uso de return, concatenación.
+
+-- Sala oculta adicional: Control del Servidor
+Cómo se accede: Resolver las tres pruebas principales sin errores.
+Contenido: Introducción al uso de $_SESSION para mantener el estado del jugador entre salas.
+Ejemplo: Recordar si se ha recogido una “llave lógica” en otra pantalla para desbloquear el acceso final.
+
+
+
+
+
+PANTALLA FINAL: EL NÚCLEO
+
+Fondo: Cámara central con un orbe digital. Voz misteriosa (la IA del sistema) habla con el jugador.
+
+Diálogo:
+— IA: “Has demostrado comprender el tejido de este mundo… Ahora puedes reescribir tu camino.”
+
+> Elección: El jugador elige entre salir del sistema o convertirse en su nuevo "guardián".
+
+> Final opcional secreto: Si resolviste todos los puzzles sin fallos, desbloqueas un editor avanzado que permite personalizar tu final con código real (una pequeña sandbox).
+
+> Final alternativo: Si el jugador desbloqueó todos los atajos y pantallas alternativas, obtiene el final secreto donde se enfrenta a una IA maliciosa 
+y debe usar todo lo aprendido (HTML, CSS, JS, PHP, SQL) para derrotarla.
+
+
+EXTRAS POSIBLES
+
+Sistema de logros: "Etiqueta Maestro", "Estilista Pro", "Script Slayer", "Query Hunter", "Servidor Supremo".
+
+Guardado de progreso en MySQL: Errores, tiempo, pantallas completadas.
+
+Contrarreloj / modo experto: Todos los puzzles con límite de tiempo y puntuación extra.

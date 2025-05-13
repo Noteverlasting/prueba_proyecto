@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Frontera del HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>WebQuest: La Frontera del HTML</h1>
+  </header>
+
+  <section class="npc-dialog">
+    <img src="etiqueta.png" alt="NPC Etiqueta" class="npc">
+    <p>"¡Bienvenido! Ayúdame a reconstruir este código."</p>
+  </section>
+
+  <main>
+    <div class="fragmento-html">
+      <div class="html-box" id="code-box">
+        <span>&lt;div&gt;</span>
+        <div id="drop-area" class="drop-area">
+          <!-- Aquí van las etiquetas arrastradas -->
+        </div>
+        <span>&lt;/div&gt;</span>
+      </div>
+    </div>
+
+    <div class="etiquetas">
+      <div class="draggable" draggable="true" data-tag="<h1>">&lt;h1&gt;</div>
+      <div class="draggable" draggable="true" data-tag="</h1>">&lt;/h1&gt;</div>
+      <div class="draggable" draggable="true" data-tag="<p>">&lt;p&gt;</div>
+      <div class="draggable" draggable="true" data-tag="</p>">&lt;/p&gt;</div>
+    </div>
+
+    <button id="check">Comprobar</button>
+    <p id="feedback"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
