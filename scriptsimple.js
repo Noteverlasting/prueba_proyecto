@@ -75,13 +75,18 @@ checkBtn.addEventListener('click', () => {
   }
 
   // Mensaje de feedback
-  if (isTitleCorrect && isParaCorrect) {
-    feedback.textContent = "¡Correcto! Has estructurado el HTML.";
-    feedback.style.color = "#00ff99";
-  } else {
-    feedback.textContent = "Algo no está bien… revisa las etiquetas.";
-    feedback.style.color = "#ff4444";
-  }
+const dialog = document.getElementById('npc-dialog-text');
+const anotacion = document.querySelector('.anotacion');  // Seleccionamos la anotación
+
+if (isTitleCorrect && isParaCorrect) {
+  dialog.textContent = "✅ ¡Correcto! Has estructurado el HTML.";
+  dialog.style.color = "#00ff99";
+  anotacion.style.display = "none"; // Ocultamos la anotación
+} else {
+  dialog.textContent = "❌ Algo no está bien… revisa las etiquetas.";
+  dialog.style.color = "#ff4444";
+  
+}
 
   // Quitar animaciones después de un tiempo
   setTimeout(() => {

@@ -30,6 +30,10 @@ header h1 {
    0 0 15px #00ffcc;
 }
 
+.npc-dialog p.flash {
+  animation: flash 0.5s ease-in-out 2;
+}
+
 .anotacion {
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
@@ -199,3 +203,9 @@ button {
   95%  { opacity: 0.5; transform: translate(-2px, 1px) skew(-8deg, -1deg); }
   100% { opacity: 1; transform: none; }
 }
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
