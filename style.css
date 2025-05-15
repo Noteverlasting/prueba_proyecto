@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #121212;
+  background-image: url(wallpaperhtml.webp) ;
   color: #f0f0f0;
   text-align: center;
   margin: 0;
@@ -13,14 +13,26 @@ header h1 {
 
 .npc-dialog {
   margin: 20px auto;
-  background: #ccb9b9;
-  padding: 25px;
-  border: 1px solid #333;
+  background: #ccb9b957;
+  padding: 15px;
+  border: 2px solid #00ff99;
   width: 80%;
   position: relative;
   z-index: 2;
-  color:#003322;
+  color:#0ada95;
   font-size: 1.8rem;
+  font-family: monospace;
+  text-shadow: 
+   -2px -2px 2px #000,
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000,
+   0 0 15px #00ffcc;
+}
+
+.anotacion {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
 }
 
 .npc {
@@ -30,8 +42,12 @@ header h1 {
   position: absolute;
   top: 280px;
   right: 200px;
-
+  animation: 
+    flotar 3s ease-in-out infinite,
+    glitch 1.8s steps(2, end) infinite;
+  filter: drop-shadow(0 0 10px #ffffff);
 }
+
 
 .npc-imagen{
   display: flex;
@@ -81,7 +97,7 @@ button {
   margin-top: 15px;
   padding: 10px 20px;
   background: #00ff99;
-  border: none;
+  border: 2px solid black;
   color: #000;
   cursor: pointer;
 }
@@ -153,4 +169,33 @@ button {
   0%   { background-color: #330000; }
   50%  { background-color: #ff4444; color: #000; }
   100% { background-color: transparent; }
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glitch {
+  0%   { opacity: 1; transform: none; }
+  5%   { opacity: 0.3; transform: translate(-2px, 2px) skew(2deg, 1deg); }
+  8%   { opacity: 1; transform: none; }
+  12%  { opacity: 0.6; transform: translate(3px, -1px) skew(-3deg, 0.5deg); }
+  15%  { opacity: 0.2; transform: translate(-4px, 2px) skew(10deg, -1deg); }
+  18%  { opacity: 1; transform: none; }
+  22%  { opacity: 0.7; transform: translate(2px, -2px) skew(1deg, 1deg); }
+  25%  { opacity: 1; transform: none; }
+  28%  { opacity: 0.4; transform: translate(-1px, 1px) skew(-2deg, 0); }
+  30%  { opacity: 1; transform: none; }
+  35%  { opacity: 0.6; transform: translate(1px, -3px) skew(5deg, 2deg); }
+  40%  { opacity: 1; transform: none; }
+  50%  { opacity: 0.5; transform: skew(20deg, 0); }
+  55%  { opacity: 1; transform: none; }
+  65%  { opacity: 0.2; transform: translate(-3px, 3px) skew(-5deg, 3deg); }
+  70%  { opacity: 1; transform: none; }
+  80%  { opacity: 0.3; transform: translate(4px, -2px) skew(15deg, 2deg); }
+  85%  { opacity: 0.9; transform: none; }
+  95%  { opacity: 0.5; transform: translate(-2px, 1px) skew(-8deg, -1deg); }
+  100% { opacity: 1; transform: none; }
 }
