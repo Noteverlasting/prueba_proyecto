@@ -77,11 +77,13 @@ checkBtn.addEventListener('click', () => {
   // Mensaje de feedback
 const dialog = document.getElementById('npc-dialog-text');
 const anotacion = document.querySelector('.anotacion');  // Seleccionamos la anotación
+const npc = document.querySelector('.npc'); //selecionamos el npc
 
 if (isTitleCorrect && isParaCorrect) {
   dialog.textContent = "✅ ¡Correcto! Has estructurado el HTML.";
   dialog.style.color = "#00ff99";
   anotacion.style.display = "none"; // Ocultamos la anotación
+  npc.classList.add('paused-glitch'); // Pausamos la animación del glitch
 } else {
   dialog.textContent = "❌ Algo no está bien… revisa las etiquetas.";
   dialog.style.color = "#ff4444";

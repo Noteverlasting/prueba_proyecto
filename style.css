@@ -47,11 +47,14 @@ header h1 {
   top: 280px;
   right: 200px;
   animation: 
-    flotar 3s ease-in-out infinite,
+    flotar 3s ease-in-out infinite alternate,
     glitch 1.8s steps(2, end) infinite;
   filter: drop-shadow(0 0 10px #ffffff);
 }
 
+.npc.paused-glitch {
+  animation: flotar 2s infinite alternate;  /* Solo mantiene la animación de flotación */
+}
 
 .npc-imagen{
   display: flex;
