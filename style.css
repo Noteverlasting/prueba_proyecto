@@ -13,15 +13,32 @@ header h1 {
 
 .npc-dialog {
   margin: 20px auto;
-  background: #1a1a1a;
-  padding: 10px;
+  background: #ccb9b9;
+  padding: 25px;
   border: 1px solid #333;
   width: 80%;
+  position: relative;
+  z-index: 2;
+  color:#003322;
+  font-size: 1.8rem;
 }
 
 .npc {
-  width: 80px;
+  width: 300px;
   vertical-align: middle;
+    z-index: 1;
+  position: absolute;
+  top: 280px;
+  right: 200px;
+
+}
+
+.npc-imagen{
+  display: flex;
+  justify-content: end;
+  width: 80%;
+
+  
 }
 
 .fragmento-html {
@@ -36,7 +53,10 @@ header h1 {
 }
 
 .drop-area {
+  display: flex;
+  justify-content: center;
   min-height: 50px;
+
   border: 1px solid #555;
   margin: 10px 0;
   padding: 10px;
@@ -68,4 +88,69 @@ button {
 
 #feedback {
   margin-top: 10px;
+}
+
+/* Zonas específicas donde se dropean etiquetas (<h1>, </h1>, etc.) */
+.drop-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #2a2a2a;
+}
+
+/* Cada espacio donde se puede soltar una etiqueta */
+.drop-slot {
+  width: 70px;
+  min-height: 35px;
+  border: 2px dashed #00ff99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c1c1c;
+  color: #00ff99;
+  font-family: monospace;
+  padding: 4px;
+}
+
+/* Contenido fijo como "Hello World" o "Este es un párrafo" */
+.html-content {
+  font-family: monospace;
+  padding: 6px 10px;
+  background-color: #333;
+  border: 1px solid #666;
+  color: #f0f0f0;
+  white-space: pre;
+}
+
+/* Etiquetas insertadas tras el drop */
+.inserted-tag {
+  font-family: monospace;
+  color: #00ff99;
+}
+
+/* Colores de retroalimentación */
+.correct {
+  color: #00ff99;
+  animation: flashSuccess 0.6s ease-in-out;
+}
+
+.incorrect {
+  color: #ff4444;
+  animation: flashError 0.6s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes flashSuccess {
+  0%   { background-color: #003322; }
+  50%  { background-color: #00ff99; color: #000; }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashError {
+  0%   { background-color: #330000; }
+  50%  { background-color: #ff4444; color: #000; }
+  100% { background-color: transparent; }
 }

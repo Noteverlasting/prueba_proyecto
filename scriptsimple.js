@@ -1,18 +1,13 @@
 const draggables = document.querySelectorAll('.draggable');
 const dropSlots = document.querySelectorAll('.drop-slot');
 const checkBtn = document.getElementById('check');
+const resetBtn = document.getElementById('reset');
 const feedback = document.getElementById('feedback');
 
 // DRAG & DROP
 draggables.forEach(elem => {
   elem.addEventListener('dragstart', (e) => {
-    // Guardamos el id o el tag en el que estamos arrastrando
     e.dataTransfer.setData("text", e.target.dataset.tag);
-    e.target.classList.add('dragging'); // Establecemos la clase para visualización
-  });
-
-  elem.addEventListener('dragend', (e) => {
-    e.target.classList.remove('dragging');
   });
 });
 
@@ -26,29 +21,16 @@ dropSlots.forEach(slot => {
     e.preventDefault();
     const tag = e.dataTransfer.getData("text"); // Obtenemos el tag de la etiqueta arrastrada
 
-    // Verificamos si ya hay una etiqueta en este slot
-    const existingTag = slot.querySelector('.inserted-tag');
-    if (existingTag) {
-      // Si ya hay una etiqueta en el slot, no hacemos nada
-      return;
+    // Si ya hay una etiqueta en este slot, no hacemos nada
+    if (slot.children.length > 0) {
+      return; // Si ya tiene una etiqueta, no hacemos nada
     }
 
-    // Si no hay etiqueta, creamos una nueva etiqueta en el slot
+    // Si no hay etiqueta, la insertamos
     const newElem = document.createElement("div");
     newElem.textContent = tag; // Le asignamos el contenido del tag
-    newElem.classList.add("inserted-tag"); // Aseguramos que esta es la etiqueta insertada
-    newElem.setAttribute("draggable", "true"); // Permitimos que sea arrastrable de nuevo
-    newElem.dataset.tag = tag; // Guardamos el tag de la etiqueta
-
-    // Hacemos que esta etiqueta también sea arrastrable
-    newElem.addEventListener('dragstart', (e) => {
-      e.dataTransfer.setData("text", tag);
-      e.target.classList.add('dragging');
-    });
-
-    newElem.addEventListener('dragend', (e) => {
-      e.target.classList.remove('dragging');
-    });
+    newElem.classList.add("inserted-tag"); // Clase para marcar que ya está insertada
+    newElem.setAttribute("draggable", "false"); // Deshabilitamos el arrastre después de soltarla
 
     // Agregamos la nueva etiqueta al slot
     slot.appendChild(newElem);
@@ -75,6 +57,7 @@ checkBtn.addEventListener('click', () => {
   const isTitleCorrect = tags.titleOpen === "<h1>" && tags.titleClose === "</h1>";
   const isParaCorrect = tags.paraOpen === "<p>" && tags.paraClose === "</p>";
 
+  // Verificación de las etiquetas (Coloreado)
   if (isTitleCorrect) {
     contentTitle.classList.add("correct");
     contentTitle.classList.remove("incorrect");
@@ -91,6 +74,7 @@ checkBtn.addEventListener('click', () => {
     contentPara.classList.remove("correct");
   }
 
+  // Mensaje de feedback
   if (isTitleCorrect && isParaCorrect) {
     feedback.textContent = "¡Correcto! Has estructurado el HTML.";
     feedback.style.color = "#00ff99";
@@ -104,4 +88,20 @@ checkBtn.addEventListener('click', () => {
     contentTitle.classList.remove("correct", "incorrect");
     contentPara.classList.remove("correct", "incorrect");
   }, 1000);
+});
+
+// Botón de reset
+resetBtn.addEventListener('click', () => {
+  // Limpiamos todos los slots
+  dropSlots.forEach(slot => {
+    slot.innerHTML = ''; // Elimina cualquier etiqueta existente
+  });
+
+  // Restauramos los elementos arrastrables
+  draggables.forEach(elem => {
+    elem.setAttribute("draggable", "true"); // Volver a habilitar el drag
+  });
+
+  // Limpiar el feedback
+  feedback.textContent = '';
 });

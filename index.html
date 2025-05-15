@@ -11,21 +11,32 @@
     <h1>WebQuest: La Frontera del HTML</h1>
   </header>
 
-  <section class="npc-dialog">
-    <img src="etiqueta.png" alt="NPC Etiqueta" class="npc">
-    <p>"¡Bienvenido! Ayúdame a reconstruir este código."</p>
-  </section>
 
   <main>
-    <div class="fragmento-html">
-      <div class="html-box" id="code-box">
-        <span>&lt;div&gt;</span>
-        <div id="drop-area" class="drop-area">
-          <!-- Aquí van las etiquetas arrastradas -->
-        </div>
-        <span>&lt;/div&gt;</span>
-      </div>
+
+    
+<div class="fragmento-html">
+  <div class="html-box" id="code-box">
+    <span>&lt;div&gt;</span>
+    
+    <!-- Bloque de título -->
+    <div id="drop-area-title" class="drop-area">
+      <div class="drop-slot" data-slot="open-title"></div>
+      <span class="html-content">Hello World</span>
+      <div class="drop-slot" data-slot="close-title"></div>
     </div>
+
+    <!-- Bloque de párrafo -->
+    <div id="drop-area-paragraph" class="drop-area">
+      <div class="drop-slot" data-slot="open-paragraph"></div>
+      <span class="html-content">Este es un párrafo</span>
+      <div class="drop-slot" data-slot="close-paragraph"></div>
+    </div>
+
+    <span>&lt;/div&gt;</span>
+  </div>
+</div>
+
 
     <div class="etiquetas">
       <div class="draggable" draggable="true" data-tag="<h1>">&lt;h1&gt;</div>
@@ -35,9 +46,19 @@
     </div>
 
     <button id="check">Comprobar</button>
+    <button id="reset">Resetear</button>
     <p id="feedback"></p>
+  
+  <section class="npc-imagen">
+  <img src="etiqueta.png" alt="NPC Etiqueta" class="npc">
+  </section>
+  <section class="npc-dialog">
+    <p>"¡Bienvenido! Ayúdame a reconstruir este código."</p>
+  </section>
+
   </main>
 
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
+   <script src="scriptsimple.js"></script>
 </body>
 </html>
